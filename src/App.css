@@ -30,19 +30,40 @@ nav a:hover {
 }
 nav .hamburger-menu {
   display: none;
+  cursor: pointer;
 }
 
-.menu {
-  display: none;
-}
-.menu.show{
+.menu{
   position: fixed;
-  display: block;
+  display: none;
+  flex-direction: column;
   background-color: white;
   height: 100vh;
   width: 100%;
   top: 0;
+  padding:60px 20px;
+  font-size: 1.5rem;
 }
+.menu.show {
+  display: flex;
+}
+.menu a{
+  margin: 15px 0;
+  text-decoration: none;
+}
+.menu a:hover {
+  text-decoration: underline;
+}
+.menu .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
 /* Home page */
 .home-page {
   padding: 30px;
@@ -144,7 +165,7 @@ nav .hamburger-menu {
 
 
 
-@media (max-width : 660px) {
+@media (max-width : 800px) {
   nav a{
     display: none;
   }
