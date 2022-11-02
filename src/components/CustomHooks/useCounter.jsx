@@ -15,10 +15,10 @@ export default function useCounter(initialValue = 0) {
     function setValue(e) {
         let num = Number(e.target.value);
         if (String(num) == "NaN" || e.target.value == "") {
-            setCount(count)
+            setCount(count);
         }
         else {
-            setCount(e.target.value)
+            setCount(num);
         }
     }
   return {count, increase, decrease, reset, setValue}
