@@ -2,11 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Alt School Frontend Exam Project Question 2
 
-In the project directory, you can run:
+Counter App
 
-### `Hosted Link`
+## `Hosted Link`
 
 Open [https://counterapp-a27be.web.app/](https://counterapp-a27be.web.app/) to view it in your browser.
 
