@@ -25,14 +25,14 @@ export default function ReducerCounter() {
               dispatch({ type: ACTIONS.INCREASE });
             }}
           >
-            INCREMENT
+            INCREASE
           </button>
           <button
             onClick={() => {
               dispatch({ type: ACTIONS.DECREASE });
             }}
           >
-            DECREMENT
+            DECREASE
           </button>
           <button
             onClick={() => {

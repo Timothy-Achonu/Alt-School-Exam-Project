@@ -18,8 +18,8 @@ function Counter() {
         />
         <h2 className="count-num">Count : {count}</h2>
         <div className="buttons-wrapper">
-          <button onClick={increase}>INCREMENT</button>
-          <button onClick={decrease}>DECREMENT</button>
+          <button onClick={increase}>INCREASE</button>
+          <button onClick={decrease}>DECREASE</button>
           <button onClick={reset}>RESET</button>
         </div>
       </div>
