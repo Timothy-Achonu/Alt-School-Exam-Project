@@ -9,7 +9,7 @@ const useReducerCounter = (initialValue = 0) => {
   };
   function setValue(value, count) {
     let num = Number(value);
-    if (String(num) == "NaN" || value == "") {
+    if (String(num) === "NaN" || value === "") {
       return count;
     }
     return num;

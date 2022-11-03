@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 
 export default function useCounter(initialValue = 0) {
@@ -14,7 +14,7 @@ export default function useCounter(initialValue = 0) {
     }
     function setValue(e) {
         let num = Number(e.target.value);
-        if (String(num) == "NaN" || e.target.value == "") {
+        if (String(num) === "NaN" || e.target.value === "") {
             setCount(count);
         }
         else {

@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import {useEffect} from "react";
 import useReducerCounter from "./CustomHooks/useReducerCounter";
 
 export default function ReducerCounter() {

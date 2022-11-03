@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import NotFound from "./components/NotFound";
 import TestError from "./components/TestError";
 import ReducerCounter from "./components/ReducerCounter";
-import imgSrc from  './assets/icons8-hamburger-menu-32.png'
+import imgSrc from  './assets/icons8-hamburger-menu-32.png';
 import Menu from "./components/Menu";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
          className="hamburger-menu"
          onClick={() => setShowMenu(prev => !prev)}
          >
-        <img src={imgSrc} />
+        <img src={imgSrc} alt="hamburger menu img"/>
       </figure>
       </nav>
       <Menu  
@@ -38,6 +38,7 @@ function App() {
   );
 }
 export default App;
+
 /*
 Setup a custom counter hook with increment, decrement, reset, 
 setValue functions with a valid UI and Implement a combination 
