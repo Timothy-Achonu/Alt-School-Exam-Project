@@ -7,9 +7,8 @@ export default function Home() {
       <p>
         This is a counter app that helps you increase, 
         decrease, reset and set the value of your count.
-        This App was built with two React custom hooks. 
-        One of the custom hook is built with useState 
-        while the other is built with useReducer. 
+        This App was built with a custom hook built with useState,
+        and React useReducer hook.
         They both have the same functionalities. 
       </p>
     </div>
