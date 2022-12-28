@@ -4,56 +4,79 @@ function ReducerCounter() {
   useEffect(() => {
     window.scrollTo({ behavior: "smooth", top: "0" });
   }, []);
-  
+
   const ACTIONS = {
     INCREASE: "increase",
     DECREASE: "decrease",
     RESET: "reset",
-    SET_VALUE: "setValue",
+    SET_COUNT_VALUE: "setValue",
+    SET_VALUE: "setValueToChangeCountWith",
   };
-  function setValue(value, count) {
+  function setValue(value, state, type) {
     let num = Number(value);
     if (String(num) === "NaN" || value === "") {
-      return count;
+      return state;
     }
-    return num;
+    return type === ACTIONS.SET_VALUE
+      ? { ...state, valueToChangeCountWith: num  }
+      : { ...state, count: num };
   }
-  function reducer(count, action) {
+  function reducer(state, action) {
     switch (action.type) {
+      case ACTIONS.SET_COUNT_VALUE:
+        return setValue(action.payload, state, action.type);
       case ACTIONS.SET_VALUE:
-        return setValue(action.payload, count);
+        return setValue(action.payload, state, action.type);
       case ACTIONS.INCREASE:
-        return ++count;
+        return { ...state, count: state.count + state.valueToChangeCountWith };
       case ACTIONS.DECREASE:
-        return --count;
+        return { ...state, count: state.count - state.valueToChangeCountWith };
       case ACTIONS.RESET:
-        return 0;
+        return { count: 0, valueToChangeCountWith : 1,};
       default:
-        return count;
+        return state;
     }
   }
-  function inputHandler(e) {
+  function countHandler(e) {
+    dispatch({
+      type: ACTIONS.SET_COUNT_VALUE,
+      payload: e.target.value,
+      elem: e.target,
+    });
+  }
+  function valueHandler(e) {
     dispatch({
       type: ACTIONS.SET_VALUE,
       payload: e.target.value,
       elem: e.target,
-    })
+    });
   }
-  const [count, dispatch] = useReducer(reducer, 0);
+  const [state, dispatch] = useReducer(reducer, { count: 0, valueToChangeCountWith: 1 });
 
   return (
     <div className="counter">
       <h1>UseReducer Counter</h1>
       <div>
-        <input
-          type="text"
-          placeholder="set counter value"
-          onChange={inputHandler}
-          onBlur={(e) => {
-            e.target.value = "";
-          }}
-        />
-        <h2 className="count-num">Count : {count}</h2>
+        <div className="input-wrapper">
+          <input
+            type="text"
+            placeholder="set counter value"
+            onChange={countHandler}
+            onBlur={(e) => {
+              e.target.value = "";
+            }}
+          />
+          <input
+            type="text"
+            placeholder="specify value to change count with"
+            onChange={valueHandler}
+            onBlur={(e) => {
+              e.target.value = "";
+            }}
+          />
+        </div>
+
+        <h2 className="count-num">Count : {state.count}</h2>
         <div className="buttons-wrapper">
           <button
             onClick={() => {
@@ -80,7 +103,7 @@ function ReducerCounter() {
       </div>
     </div>
   );
-};
+}
 export default ReducerCounter;
 
 /*
