@@ -10,7 +10,7 @@ function Counter() {
       <div>
         <div className="input-wrapper">
           <input
-            type="text"
+            type="number"
             placeholder="set counter value"
             onChange={setCountValue}
             onBlur={(e) => {
@@ -18,7 +18,7 @@ function Counter() {
             }}
           />
           <input
-            type="text"
+            type="number"
             placeholder="specify value to change count with"
             onChange={setValue}
             onBlur={(e) => {
