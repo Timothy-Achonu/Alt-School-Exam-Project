@@ -3,7 +3,7 @@ import useCounter from "./CustomHooks/useCounter";
 import { NavLink } from "react-router-dom";
 
 function Counter() {
-  const { count, valueToChangeCountWith, increase, decrease, reset, setCountValue, setValue } =
+  const { count, increase, decrease, reset, setCountValue, setValue } =
     useCounter(0);
   return (
     <div className="counter">

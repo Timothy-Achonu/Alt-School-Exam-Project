@@ -32,5 +32,5 @@ export default function useCounter(initialValue = 0) {
             setValueTOChangeCountWith(num);
         }
     }
-  return {count, valueToChangeCountWith, increase, decrease, reset, setCountValue, setValue}
+  return {count, increase, decrease, reset, setCountValue, setValue}
 }
