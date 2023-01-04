@@ -18,7 +18,7 @@ function ReducerCounter() {
       return state;
     }
     return type === ACTIONS.SET_VALUE
-      ? { ...state, valueToChangeCountWith: num  }
+      ? { ...state, valueToChangeCountWith: num }
       : { ...state, count: num };
   }
   function reducer(state, action) {
@@ -32,7 +32,7 @@ function ReducerCounter() {
       case ACTIONS.DECREASE:
         return { ...state, count: state.count - state.valueToChangeCountWith };
       case ACTIONS.RESET:
-        return { count: 0, valueToChangeCountWith : 1,};
+        return { count: 0, valueToChangeCountWith: 1 };
       default:
         return state;
     }
@@ -51,29 +51,41 @@ function ReducerCounter() {
       elem: e.target,
     });
   }
-  const [state, dispatch] = useReducer(reducer, { count: 0, valueToChangeCountWith: 1 });
+  const [state, dispatch] = useReducer(reducer, {
+    count: 0,
+    valueToChangeCountWith: 1,
+  });
 
   return (
     <div className="counter">
       <h1>UseReducer Counter</h1>
       <div>
         <div className="input-wrapper">
-          <input
-            type="number"
-            placeholder="set counter value"
-            onChange={countHandler}
-            onBlur={(e) => {
-              e.target.value = "";
-            }}
-          />
-          <input
-            type="number"
-            placeholder="specify value to change count with"
-            onChange={valueHandler}
-            onBlur={(e) => {
-              e.target.value = "";
-            }}
-          />
+          <div>
+            <label for="count-value">Set Count Value</label>
+            <input
+              type="number"
+              name="count-value"
+              placeholder="set counter value"
+              onChange={countHandler}
+              onBlur={(e) => {
+                e.target.value = "";
+              }}
+            />
+          </div>
+
+          <div>
+            <label for="number-to-change-count-with">
+              Set number to increase or decrease by
+            </label>
+            <input
+              type="number"
+              name="number-to-change-count-with"
+              placeholder="default: 1"
+              onChange={valueHandler}
+             
+            />
+          </div>
         </div>
 
         <h2 className="count-num">Count : {state.count}</h2>
@@ -105,6 +117,7 @@ function ReducerCounter() {
   );
 }
 export default ReducerCounter;
+//set number to increase or decrease by
 
 /*
 

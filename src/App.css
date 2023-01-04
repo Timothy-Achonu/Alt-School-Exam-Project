@@ -101,13 +101,22 @@ nav .hamburger-menu {
   margin-top: 20px;
   width: 100%;
 }
+.counter > div > .input-wrapper > div {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.counter > div > .input-wrapper > div > label {
+  text-align: center;
+}
 .counter input {
   padding: 15px 25px;
   font-size: 1.2rem;
   outline: none;
   border: 4px solid rgba(243,246,0,255);
   border-radius: 30px;
-  margin: 0 8px;
+  margin: 0 35px;
   margin-top: 12px;
   /* width: 60px; */
 }
@@ -181,6 +190,9 @@ nav .hamburger-menu {
   }
   nav .hamburger-menu {
     display: block;
+  }
+  .counter > div > .input-wrapper > div:nth-child(2) {
+    margin-top: 30px;
   }
   .counter .buttons-wrapper {
     flex-direction: column;

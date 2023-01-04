@@ -3,28 +3,36 @@ import useCounter from "./CustomHooks/useCounter";
 import { NavLink } from "react-router-dom";
 
 function Counter() {
-  const { count, increase, decrease, reset, setCountValue, setValue } = useCounter(0);
+  const { count, valueToChangeCountWith, increase, decrease, reset, setCountValue, setValue } =
+    useCounter(0);
   return (
     <div className="counter">
       <h1>Custom Hook Counter</h1>
       <div>
         <div className="input-wrapper">
-          <input
-            type="number"
-            placeholder="set counter value"
-            onChange={setCountValue}
-            onBlur={(e) => {
-              e.target.value = "";
-            }}
-          />
-          <input
-            type="number"
-            placeholder="specify value to change count with"
-            onChange={setValue}
-            onBlur={(e) => {
-              e.target.value = "";
-            }}
-          />
+          <div>
+            <label for="count-value">Set Count Value</label>
+            <input
+              type="number"
+              name="count-value"
+              placeholder="set counter value"
+              onChange={setCountValue}
+              onBlur={(e) => {
+                e.target.value = "";
+              }}
+            />
+          </div>
+          <div>
+            <label for="number-to-change-count-with">
+              Set number to increase or decrease by
+            </label>
+            <input
+              type="number"
+              placeholder="defualt: 1"
+              name="number-to-change-count-with"
+              onChange={setValue}
+            />
+          </div>
         </div>
 
         <h2 className="count-num">Count : {count}</h2>
