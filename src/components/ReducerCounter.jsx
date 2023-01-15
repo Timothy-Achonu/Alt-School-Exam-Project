@@ -73,7 +73,6 @@ function ReducerCounter() {
               }}
             />
           </div>
-
           <div>
             <label for="number-to-change-count-with">
               Set number to increase or decrease by

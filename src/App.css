@@ -72,6 +72,9 @@ nav .hamburger-menu {
   text-align: center;
   margin-bottom: 20px;
 }
+.home-page p {
+  text-align: center;
+}
 
 /* Counter page styling */
 .counter {

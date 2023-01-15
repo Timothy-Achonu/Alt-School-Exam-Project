@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Menu({ showMenu, setShowMenu }) {
+function Menu({ showMenu, setShowMenu }) {
   return (
     <div className={`menu ${showMenu ? "show" : ""}`}>
       <div
@@ -39,3 +39,4 @@ export default function Menu({ showMenu, setShowMenu }) {
     </div>
   );
 }
+export default Menu;
